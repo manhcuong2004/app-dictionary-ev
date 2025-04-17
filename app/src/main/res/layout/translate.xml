@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/light_gray"
+        tools:context=".TranslateActivity">
+
+        <!-- Custom Header -->
+        <com.example.app_dictionary_ev.CustomHeader
+            android:id="@+id/customHeader"
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+
+        <!-- Vietnamese Input Section -->
+        <LinearLayout
+            android:id="@+id/vietnamese_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_blue_bg"
+            android:padding="16dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Việt"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="11" />
+
+                <ImageView
+                    android:id="@+id/volume_icon_vi"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_volume"
+                    app:tint="@android:color/white"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/sourceTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_white_bg"
+                android:hint="Hãy nhập gì đó..."
+                android:padding="12dp"
+                android:textColor="@android:color/black"
+                android:inputType="textMultiLine"
+                android:minLines="1"
+                android:maxLines="5"/>
+        </LinearLayout>
+
+        <!-- Swap Button -->
+        <RelativeLayout
+            android:id="@+id/rotate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_rotate"
+                android:background="@drawable/circle_white_bg"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <!-- English Output Section -->
+        <LinearLayout
+            android:id="@+id/english_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_blue_bg"
+            android:padding="16dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anh"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="11" />
+
+                <ImageView
+                    android:id="@+id/volume_icon_en"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_volume"
+                    app:tint="@android:color/white"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/translatedTextOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="12dp"
+                android:textColor="@android:color/black"
+                android:inputType="textMultiLine"
+                android:minLines="1"
+                android:maxLines="5"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <!-- History RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_white_bg"
+            android:visibility="gone"
+            tools:listitem="@layout/item_translate"/>
+
+    </LinearLayout>
+</ScrollView>

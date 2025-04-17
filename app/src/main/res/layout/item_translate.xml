@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:paddingBottom="8dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Nội dung text -->
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/iconContainer"
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
+
+        <!-- Dòng text nguồn -->
+        <TextView
+            android:id="@+id/textSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#1F2937"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Van ban dich"/>
+
+        <!-- Dòng text bản dịch -->
+        <TextView
+            android:id="@+id/textTranslation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#6B7280"
+            android:textSize="14sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Van ban can dich"/>
+    </LinearLayout>
+
+    <!-- Container chứa các icon -->
+    <LinearLayout
+        android:id="@+id/iconContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+
+        <!-- Icon trash (đặt lên trước) -->
+        <ImageView
+            android:id="@+id/iconTrash"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_trash"
+            app:tint="#4B5563"
+            android:contentDescription="Delete"/>
+
+        <!-- Icon play (đặt sau) -->
+        <ImageView
+            android:id="@+id/iconPlay"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_play"
+            app:tint="#4B5563"
+            android:contentDescription="Play"/>
+    </LinearLayout>
+
+    <!-- Dấu gạch ngang phân cách -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/contentLayout"
+        android:background="#E5E7EB"/>
+</RelativeLayout>
